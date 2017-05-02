@@ -34,11 +34,11 @@ Once tapped you can install the formula by name
 (i.e. the name of the .rb files in the root of this repo, minus the 'rb suffix),
 e.g.:
 
-    $ brew install sous
-
-Or to disambiguate, you can install them by fully qualified formula name, e.g.:
-
     $ brew install opentable/public/sous
+
+Note that it is possible to install formula omitting the 'opentable/public' part,
+but if your tap is misconfigured and the name is ambiguous, you will end up with the
+wrong software installed, so this is not recommended.
 
 The latter (fully qualified formula name) is recommended.
 
