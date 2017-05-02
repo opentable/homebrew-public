@@ -1,0 +1,20 @@
+class Sous < Formula
+  desc "Sous tool for building and deploying at OpenTable"
+  homepage "https://github.com/opentable/sous"
+
+  # When the version of Sous changes, these two fields need to be updated
+  version "<%= version %>"
+  sha256 "<%= sha256 %>"
+
+  url "<%= url %>"
+
+  def install
+    # ENV.deparallelize  # if your formula fails when building in parallel
+
+    bin.install "sous"
+  end
+
+  test do
+    system "sous", "version"
+  end
+end
