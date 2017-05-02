@@ -17,30 +17,34 @@ Then you should run 'brew update' to make sure you have the latest version.
 
 [install Homebrew]: https://brew.sh
 
-### Add this tap to receive updates
 
-If you're interested in these formula, you should use 'brew tap' to
-start receiving updates for them via 'brew update':
+### Installing Software
 
-    $ brew tap opentable/public
-
-If you no longer want to use this tap:
-
-    $ brew untap opentable/public
-
-### Installing formula
-
-Once tapped you can install the formula by name
-(i.e. the name of the .rb files in the root of this repo, minus the 'rb suffix),
-e.g.:
+Install the formula by using `brew install opentable/public/<formula>`
+Where `<formula>` is the name of one of the .rb files in the root of this repo,
+minus the 'rb suffix. e.g.:
 
     $ brew install opentable/public/sous
 
-Note that it is possible to install formula omitting the 'opentable/public' part,
-but if your tap is misconfigured and the name is ambiguous, you will end up with the
-wrong software installed, so this is not recommended.
+This command will install [Sous] and set up your local `opentable/public` tap
+so that you receive updates in future.
 
-The latter (fully qualified formula name) is recommended.
+_Note that it is possible to install formula omitting the 'opentable/public' part,
+but if your tap is misconfigured and the name is ambiguous, you will end up with the
+wrong software installed, so this is not recommended._
+
+[Sous]: https://github.com/opentable/sous
+
+### Uninstalling Software
+
+Το uninstall software installed by this tap, use
+`brew uninstall opentable/public/<formula>` e.g.:
+
+    $ brew uninstall opentable/public/sous
+
+If you additionally no longer want to receive updates from this tap:
+
+    $ brew untap opentable/public
 
 ## Maintenance
 
