@@ -32,6 +32,13 @@ def http_digest(url)
   end
 end
 
+def run(string)
+  puts "> #{string}"
+  puts %x{#{string}}
+end
+
+run "git pull"
+
 rel_name = ARGV[0]
 
 client = Octokit.root
@@ -62,3 +69,6 @@ File.open("sous.rb", "w") do |sous|
   sous.write(erb.result(context.bind))
 end
 puts "Updated sous.rb with #{context.inspect}"
+
+run "git commit -am 'Updating Sous to #{rel_name}'"
+run "git push"
