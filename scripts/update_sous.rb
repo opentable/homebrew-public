@@ -2,6 +2,7 @@
 
 require 'octokit'
 require 'erb'
+require 'pathname'
 require 'net/http'
 
 Context = Struct.new(:version, :url, :sha256)
@@ -37,6 +38,10 @@ def run(string)
   puts %x{#{string}}
 end
 
+def relpath(string)
+  Pathname.new(__FILE__).dirname.join(string).realpath.to_s
+end
+
 run "git pull"
 
 rel_name = ARGV[0]
@@ -64,8 +69,8 @@ asset_url = asset.browser_download_url
 digest = http_digest(asset_url)
 
 context = Context.new(rel_name, asset_url, digest)
-erb = ERB.new(File.read("sous.rb.erb"))
-File.open("sous.rb", "w") do |sous|
+erb = ERB.new(File.read(relpath("../sous.rb.erb")))
+File.open(relpath("../sous.rb"), "w") do |sous|
   sous.write(erb.result(context.bind))
 end
 puts "Updated sous.rb with #{context.inspect}"
