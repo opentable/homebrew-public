@@ -1,5 +1,8 @@
-with (import /home/judson/dev/nixpkgs {});
-(bundlerEnv {
-  pname = "octokit";
-  gemdir = ./.;
-}).env
+with (import <nixpkgs> {});
+let
+  homebrew = bundlerEnv {
+    name = "homebrew-deploy";
+    gemdir = ./.;
+  };
+in
+  homebrew.env
