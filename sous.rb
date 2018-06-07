@@ -3,10 +3,10 @@ class Sous < Formula
   homepage "https://github.com/opentable/sous"
 
   # When the version of Sous changes, these two fields need to be updated
-  version "0.5.100"
-  sha256 "2ccfbb0b32133bb449844409e488b620eb3d29c490cd2bf3246cdd48a81df1ed"
+  version "0.5.101"
+  sha256 "004ec18e182cb64bda2d790bfbb4d46f02bfa9d224b847364f7b467c76fc3aba"
 
-  url "https://github.com/opentable/sous/releases/download/0.5.100/sous-darwin-amd64_0.5.100.tar.gz"
+  url "https://github.com/opentable/sous/releases/download/0.5.101/sous-darwin-amd64_0.5.101.tar.gz"
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
